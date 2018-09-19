@@ -17,6 +17,14 @@ from kotti_toolkit import _
 from kotti_toolkit.util import merge_list, slugify
 
 
+def is_user(principal):
+    return not principal.name.startswith("group:")
+
+
+def is_group(principal):
+    return principal.name.startswith("group:")
+
+
 def create_user(username, title, password,
                 email, roles=[], groups=[], active=True):
     """ Create an user account.
@@ -38,7 +46,7 @@ def create_user(username, title, password,
     user = Principal(username, title=title, email=email,
                      active=active, password=password, groups=groups)
     principals[user.id] = user
-    return principals[user.id]
+    return user
 
 
 def find_group(name):
@@ -56,12 +64,14 @@ def _find_principal_by_email_domain(email_domain):
     query = Principal.query
     pattern = "(@{})".format(email_domain)
     return query.filter(Principal.email.op('~')(pattern))
+
     
 def find_users_by_email_domain(email_domain, limit=100):
     query = _find_principal_by_email_domain(email_domain)
     query = query.filter(Principal.name.contains("group:") == False)
     return query.limit(limit)
-    
+
+
 def find_groups_by_email_domain(email_domain, limit=100):
     query = _find_principal_by_email_domain(email_domain)
     query = query.filter(Principal.name.contains("group:") == True)
@@ -90,5 +100,5 @@ def create_group(title, email, name="", groups=[], roles=[]):
                      active=True, groups=groups)
         principals[group.id] = group
         # DBSession.add(group)
-        return principals[group.id]
+        return group
     return None

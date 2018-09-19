@@ -1,7 +1,13 @@
 kotti_toolkit
 **********
 
-This is an extension to Kotti that allows to add foo to your site.
+This is a toolkit library for Kotti. It adds toolkits for the following components:
+
+- Groups and Users
+- Pyramid View Renderers
+- Security
+- Python list function
+- Kotti Content types.
 
 |pypi|_
 |downloads_month|_
@@ -17,12 +23,12 @@ This is an extension to Kotti that allows to add foo to your site.
 .. |license| image:: https://img.shields.io/pypi/l/kotti_toolkit.svg?style=flat-square
 .. _license: http://www.repoze.org/LICENSE.txt
 
-.. |build_status_stable| image:: https://img.shields.io/travis/b4oshany/kotti_toolkit/production.svg?style=flat-square
-.. _build_status_stable: http://travis-ci.org/b4oshany/kotti_toolkit
+.. |build_status_stable| image:: https://img.shields.io/travis/Collective-Kotti/kotti_toolkit/production.svg?style=flat-square
+.. _build_status_stable: http://travis-ci.org/Collective-Kotti/kotti_toolkit
 
 `Find out more about Kotti`_
 
-Development happens at https://github.com/b4oshany/kotti_toolkit
+Development happens at https://github.com/Collective-Kotti/kotti_toolkit
 
 .. _Find out more about Kotti: http://pypi.python.org/pypi/Kotti
 
@@ -51,13 +57,13 @@ Development
 
 |build_status_master|_
 
-.. |build_status_master| image:: https://img.shields.io/travis/b4oshany/kotti_toolkit/master.svg?style=flat-square
-.. _build_status_master: http://travis-ci.org/b4oshany/kotti_toolkit
+.. |build_status_master| image:: https://img.shields.io/travis/Collective-Kotti/kotti_toolkit/master.svg?style=flat-square
+.. _build_status_master: http://travis-ci.org/Collective-Kotti/kotti_toolkit
 
 Contributions to kotti_toolkit are highly welcome.
 Just clone its `Github repository`_ and submit your contributions as pull requests.
 
 .. _alembic: http://pypi.python.org/pypi/alembic
 .. _alembic documentation: http://alembic.readthedocs.org/en/latest/index.html
-.. _tracker: https://github.com/b4oshany/kotti_toolkit/issues
-.. _Github repository: https://github.com/b4oshany/kotti_toolkit
+.. _tracker: https://github.com/Collective-Kotti/kotti_toolkit/issues
+.. _Github repository: https://github.com/Collective-Kotti/kotti_toolkit
