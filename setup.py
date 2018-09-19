@@ -13,11 +13,13 @@ try:
 except IOError:
     CHANGES = ''
 
-version = '1.0.0'
+version = '1.0.1'
 
 install_requires = [
+    'click>=6.6',
     'Kotti>=1.0.0',
     'kotti_tinymce',
+    'progress'
 ]
 
 
@@ -47,6 +49,12 @@ setup(
     install_requires=install_requires,
     tests_require=[],
     dependency_links=[],
-    entry_points={},
+    entry_points={
+        'console_scripts': [
+            'new-site = kotti_toolkit.scripts.importer:new_site',
+            # Users and groups
+            'create-user = kotti_toolkit.scripts.importer:create_user'
+        ]
+    },
     extras_require={},
 )

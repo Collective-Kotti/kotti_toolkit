@@ -1,6 +1,10 @@
 History
 =======
 
+1.0.1
+----------------
+- Use endswith instead of regex search when querying for principals with a particular email domain name.
+- Add a create-user bin script.
 
 1.0.0
 ----------------

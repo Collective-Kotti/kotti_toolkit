@@ -1,4 +1,4 @@
-
+import transaction
 from kotti import DBSession
 from kotti.security import Principal
 from kotti.security import Principals, get_principals, set_groups
@@ -62,8 +62,8 @@ def find_group(name):
 
 def _find_principal_by_email_domain(email_domain):
     query = Principal.query
-    pattern = "(@{})".format(email_domain)
-    return query.filter(Principal.email.op('~')(pattern))
+    pattern = "@{}".format(email_domain)
+    return query.filter(Principal.email.endswith(pattern))
 
     
 def find_users_by_email_domain(email_domain, limit=100):
@@ -99,6 +99,5 @@ def create_group(title, email, name="", groups=[], roles=[]):
         group = Principal(name=name, title=title, email=email,
                      active=True, groups=groups)
         principals[group.id] = group
-        # DBSession.add(group)
         return group
     return None
